@@ -4,6 +4,7 @@ from alembic import context
 
 from app.common.db.session import Base
 from app.clients.models import Client  # noqa: F401
+from app.policies.models import Policy
 
 config = context.config
 

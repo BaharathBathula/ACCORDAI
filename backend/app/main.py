@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from app.clients.routes import router as clients_router
+from app.policies.routes import router as policies_router
 
 app = FastAPI(
     title="ACCORDAI",
@@ -8,6 +9,7 @@ app = FastAPI(
 )
 
 app.include_router(clients_router)
+app.include_router(policies_router)
 
 @app.get("/health")
 def health_check():
