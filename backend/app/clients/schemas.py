@@ -16,3 +16,6 @@ class ClientResponse(BaseModel):
     name: str
     email: Optional[EmailStr] = None
     phone: Optional[str] = None
+
+    class Config:
+        from_attributes = True

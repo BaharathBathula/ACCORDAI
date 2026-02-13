@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:16
+    container_name: accordai_db
+    environment:
+      POSTGRES_USER: accordai
+      POSTGRES_PASSWORD: accordai
+      POSTGRES_DB: accordai
+    ports:
+      - "5432:5432"
+    volumes:
+      - accordai_pg:/var/lib/postgresql/data
+
+volumes:
+  accordai_pg:
