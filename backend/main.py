@@ -1,11 +1,10 @@
 from fastapi import FastAPI
+from app.routers.clients import router as clients_router
 
-app = FastAPI(
-    title="ACCORDAI",
-    version="0.1.0",
-    description="Modern AI-powered Agency Management System (AMS)"
-)
+app = FastAPI()
 
-@app.get("/health")
-def health_check():
+app.include_router(clients_router)
+
+@app.get("/")
+def root():
     return {"status": "ok"}
