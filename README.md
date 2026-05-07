@@ -275,6 +275,11 @@ ACCORDAI/
 - Metrics API endpoint added
 - Frontend system telemetry widget added
 - Production observability foundation established
+- Redis queue architecture added
+- Celery worker foundation added
+- Async AI job processing initialized
+- Background document, fraud, and policy analysis jobs added
+- Async processing documentation created
 
 ---
 
