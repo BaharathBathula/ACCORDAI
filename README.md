@@ -226,6 +226,11 @@ ACCORDAI/
 - Live customer data integration added
 - Live policy data integration added
 - Reusable frontend API client created
+- Frontend login flow integrated
+- Token-based authentication added
+- Protected routes implemented
+- Logout functionality added
+- Authenticated API requests initialized
 
 ---
 
