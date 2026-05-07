@@ -19,6 +19,9 @@ from app.api.rag import router as rag_router
 from app.middleware.request_monitor import (
     RequestMonitoringMiddleware
 )
+from app.api.metrics import (
+    router as metrics_router
+)
 
 app = FastAPI(
     title="ACCORDAI API",
@@ -45,7 +48,7 @@ app.include_router(rag_router)
 app.add_middleware(
     RequestMonitoringMiddleware
 )
-
+app.include_router(metrics_router)
 
 @app.get("/")
 def root():
