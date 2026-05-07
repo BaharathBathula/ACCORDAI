@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: accordai-postgres
+spec:
+  selector:
+    app: accordai-postgres
+  ports:
+    - protocol: TCP
+      port: 5432
+      targetPort: 5432
+  type: ClusterIP
