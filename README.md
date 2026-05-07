@@ -198,6 +198,9 @@ ACCORDAI/
 - Claims CRUD APIs added
 - AI fraud detection service initialized
 - Claim intelligence analysis endpoints added
+- AI Copilot backend service initialized
+- Conversational insurance assistant API added
+- Insurance reasoning response layer created
 
 ---
 
