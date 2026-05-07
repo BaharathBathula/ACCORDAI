@@ -291,6 +291,11 @@ ACCORDAI/
 - Redis infrastructure added
 - S3 document storage infrastructure added
 - Enterprise cloud architecture foundation established
+- Helm chart infrastructure added
+- Kubernetes deployment templating added
+- GitOps roadmap documented
+- Enterprise deployment orchestration initialized
+- Cloud-native deployment standardization added
 
 ---
 
