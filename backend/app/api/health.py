@@ -1,11 +1,29 @@
 from fastapi import APIRouter
 
-router = APIRouter()
+from datetime import datetime
+
+from app.services.metrics_service import (
+    get_metrics
+)
+
+router = APIRouter(
+    prefix="/health",
+    tags=["Health"]
+)
 
 
-@router.get("/health")
+@router.get("/")
 def health_check():
+
     return {
         "status": "healthy",
-        "platform": "ACCORDAI"
+
+        "service":
+            "ACCORDAI Backend",
+
+        "timestamp":
+            str(datetime.utcnow()),
+
+        "metrics":
+            get_metrics()
     }
