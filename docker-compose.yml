@@ -1,42 +1,119 @@
 version: "3.9"
 
 services:
+
   postgres:
     image: postgres:15
+
     container_name: accordai-postgres
+
+    restart: always
+
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
       POSTGRES_DB: accordai
+
     ports:
       - "5432:5432"
+
     volumes:
-      - accordai_postgres_data:/var/lib/postgresql/data
+      - postgres_data:/var/lib/postgresql/data
+
+
+  redis:
+    image: redis:7
+
+    container_name: accordai-redis
+
+    ports:
+      - "6379:6379"
+
 
   backend:
     build:
       context: ./backend
+
     container_name: accordai-backend
+
+    restart: always
+
     ports:
       - "8000:8000"
+
     environment:
       DATABASE_URL: postgresql://postgres:password@postgres:5432/accordai
+
       SECRET_KEY: accordai-secret-key
+
       ALGORITHM: HS256
-      ACCESS_TOKEN_EXPIRE_MINUTES: 30
+
+      ACCESS_TOKEN_EXPIRE_MINUTES: 60
+
       OPENAI_API_KEY: ${OPENAI_API_KEY}
+
       OPENAI_MODEL: gpt-4o-mini
+
+      REDIS_URL: redis://redis:6379/0
+
+      CELERY_BROKER_URL: redis://redis:6379/0
+
+      CELERY_RESULT_BACKEND: redis://redis:6379/0
+
     depends_on:
       - postgres
+      - redis
+
+
+  worker:
+    build:
+      context: ./backend
+
+    container_name: accordai-worker
+
+    command: celery -A app.core.celery_app.celery_app worker --loglevel=info
+
+    environment:
+      DATABASE_URL: postgresql://postgres:password@postgres:5432/accordai
+
+      SECRET_KEY: accordai-secret-key
+
+      ALGORITHM: HS256
+
+      ACCESS_TOKEN_EXPIRE_MINUTES: 60
+
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+
+      OPENAI_MODEL: gpt-4o-mini
+
+      REDIS_URL: redis://redis:6379/0
+
+      CELERY_BROKER_URL: redis://redis:6379/0
+
+      CELERY_RESULT_BACKEND: redis://redis:6379/0
+
+    depends_on:
+      - postgres
+      - redis
+
 
   frontend:
     build:
       context: ./frontend
+
     container_name: accordai-frontend
+
+    restart: always
+
     ports:
       - "3000:3000"
+
+    environment:
+      NEXT_PUBLIC_API_URL: http://localhost:8000
+
     depends_on:
       - backend
 
+
 volumes:
-  accordai_postgres_data:
+  postgres_data:
