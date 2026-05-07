@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: accordai-redis
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: accordai-redis
+  template:
+    metadata:
+      labels:
+        app: accordai-redis
+    spec:
+      containers:
+        - name: redis
+          image: redis:7
+          ports:
+            - containerPort: 6379
