@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: accordai-frontend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: accordai-frontend
+  template:
+    metadata:
+      labels:
+        app: accordai-frontend
+    spec:
+      containers:
+        - name: frontend
+          image: accordai-frontend:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 3000
+          env:
+            - name: NEXT_PUBLIC_API_URL
+              value: http://accordai-backend:8000
