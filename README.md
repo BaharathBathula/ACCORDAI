@@ -234,6 +234,9 @@ ACCORDAI/
 - Live policy creation workflow added
 - Policy CRUD frontend integration improved
 - Dynamic policy refresh behavior added
+- Live claim creation workflow added
+- Claims CRUD frontend integration improved
+- Dynamic claims refresh behavior added
 
 ---
 
