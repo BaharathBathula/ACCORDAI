@@ -13,3 +13,5 @@ langchain
 faiss-cpu
 sentence-transformers
 numpy
+redis
+celery
