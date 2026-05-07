@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: accordai-worker
+
+spec:
+  replicas: {{ .Values.worker.replicaCount }}
+
+  selector:
+    matchLabels:
+      app: accordai-worker
+
+  template:
+    metadata:
+      labels:
+        app: accordai-worker
+
+    spec:
+      containers:
+        - name: worker
+
+          image: {{ .Values.worker.image }}
+
+          command:
+            - celery
+            - -A
+            - app.core.celery_app.celery_app
+            - worker
+            - --loglevel=info
