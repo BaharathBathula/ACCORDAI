@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import Sidebar from "@/components/sidebar";
 import Topbar from "@/components/topbar";
 
+import CreateCustomerForm from "@/components/create-customer-form";
+
 import { getCustomers } from "@/services/customer-service";
 
 export default function CustomersPage() {
@@ -13,26 +15,28 @@ export default function CustomersPage() {
 
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    async function loadCustomers() {
+  async function loadCustomers() {
 
-      try {
-        const data = await getCustomers();
+    try {
 
-        setCustomers(data);
+      const data = await getCustomers();
 
-      } catch (error) {
+      setCustomers(data);
 
-        console.error(
-          "Failed to load customers",
-          error
-        );
+    } catch (error) {
 
-      } finally {
+      console.error(
+        "Failed to load customers",
+        error
+      );
 
-        setLoading(false);
-      }
+    } finally {
+
+      setLoading(false);
     }
+  }
+
+  useEffect(() => {
 
     loadCustomers();
 
@@ -40,9 +44,11 @@ export default function CustomersPage() {
 
   return (
     <main className="flex min-h-screen bg-black">
+
       <Sidebar />
 
       <section className="flex-1">
+
         <Topbar />
 
         <div className="p-8">
@@ -50,6 +56,7 @@ export default function CustomersPage() {
           <div className="flex items-center justify-between mb-8">
 
             <div>
+
               <h1 className="text-4xl font-bold text-white">
                 Customers
               </h1>
@@ -57,11 +64,16 @@ export default function CustomersPage() {
               <p className="text-gray-400 mt-2">
                 Insurance customer management
               </p>
+
             </div>
 
-            <button className="bg-blue-600 hover:bg-blue-500 px-5 py-3 rounded-xl text-white">
-              Add Customer
-            </button>
+          </div>
+
+          <div className="mb-10">
+
+            <CreateCustomerForm
+              onCreated={loadCustomers}
+            />
 
           </div>
 
@@ -78,7 +90,9 @@ export default function CustomersPage() {
               <table className="w-full">
 
                 <thead className="bg-gray-950">
+
                   <tr>
+
                     <th className="text-left text-gray-400 p-5">
                       Name
                     </th>
@@ -98,7 +112,9 @@ export default function CustomersPage() {
                     <th className="text-left text-gray-400 p-5">
                       Status
                     </th>
+
                   </tr>
+
                 </thead>
 
                 <tbody>
@@ -127,9 +143,13 @@ export default function CustomersPage() {
                       </td>
 
                       <td className="p-5">
+
                         <span className="bg-green-600/20 text-green-400 px-3 py-1 rounded-full text-sm">
+
                           {customer.status}
+
                         </span>
+
                       </td>
 
                     </tr>
@@ -145,7 +165,9 @@ export default function CustomersPage() {
           </div>
 
         </div>
+
       </section>
+
     </main>
   );
 }
