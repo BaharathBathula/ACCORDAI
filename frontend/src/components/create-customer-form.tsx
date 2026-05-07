@@ -4,7 +4,11 @@ import { useState } from "react";
 
 import { createCustomer } from "@/services/customer-service";
 
-export default function CreateCustomerForm() {
+export default function CreateCustomerForm({
+  onCreated
+}: {
+  onCreated?: () => void;
+}) {
 
   const [formData, setFormData] = useState({
     name: "",
@@ -39,6 +43,10 @@ export default function CreateCustomerForm() {
       setSuccess(
         "Customer created successfully."
       );
+
+      if (onCreated) {
+        onCreated();
+      }
 
       setFormData({
         name: "",
