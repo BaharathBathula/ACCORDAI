@@ -9,6 +9,7 @@ from app.api.claims import router as claims_router
 from app.api.fraud_ai import router as fraud_ai_router
 from app.api.copilot import router as copilot_router
 from app.api.tasks import router as tasks_router
+from app.api.documents import router as documents_router
 
 app = FastAPI(
     title="ACCORDAI API",
@@ -25,6 +26,7 @@ app.include_router(claims_router)
 app.include_router(fraud_ai_router)
 app.include_router(copilot_router)
 app.include_router(tasks_router)
+app.include_router(documents_router)
 
 
 @app.get("/")
