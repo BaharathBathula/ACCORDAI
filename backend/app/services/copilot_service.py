@@ -1,31 +1,46 @@
+from app.services.openai_service import generate_ai_response
+
+
 def generate_copilot_response(question: str, context: dict):
 
-    lower_question = question.lower()
+    system_prompt = """
+    You are ACCORDAI AI Copilot, an expert insurance agency management assistant.
 
-    if "renewal" in lower_question:
-        answer = "I found upcoming renewal activity. Recommend reviewing high-premium policies and accounts with recent claims."
+    You help insurance agencies with:
+    - customers
+    - policies
+    - claims
+    - renewals
+    - coverage gaps
+    - document intelligence
+    - workflow tasks
+    - operational recommendations
 
-    elif "claim" in lower_question:
-        answer = "Claims review shows open claims requiring reserve monitoring, adjuster follow-up, and possible fraud analysis."
+    Give clear, professional, insurance-domain responses.
+    """
 
-    elif "coverage" in lower_question:
-        answer = "Coverage analysis suggests checking rental reimbursement, roadside assistance, replacement cost, cyber liability, and umbrella coverage gaps."
+    user_prompt = f"""
+    User Question:
+    {question}
 
-    elif "customer" in lower_question:
-        answer = "Customer intelligence indicates active accounts, renewal opportunities, and cross-sell recommendations."
+    Business Context:
+    {context}
+    """
 
-    else:
-        answer = "ACCORDAI Copilot can help with policies, claims, renewals, customers, workflows, and insurance intelligence."
+    ai_result = generate_ai_response(
+        system_prompt=system_prompt,
+        user_prompt=user_prompt
+    )
 
     return {
         "agent": "ACCORDAI AI Copilot",
         "question": question,
-        "answer": answer,
-        "context_used": context,
+        "answer": ai_result["response"],
+        "provider": ai_result["provider"],
         "recommended_actions": [
-            "Review account details",
-            "Check policy coverage gaps",
-            "Create follow-up task",
-            "Escalate if high risk"
+            "Review customer account",
+            "Analyze related policies",
+            "Check claims history",
+            "Create follow-up task"
         ]
     }
