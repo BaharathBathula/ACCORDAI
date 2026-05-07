@@ -123,7 +123,7 @@ export default function CustomersPage() {
 
                     <tr
                       key={customer.id}
-                      className="border-t border-gray-800 hover:bg-gray-800"
+                      className="border-t border-gray-800 hover:bg-gray-800 transition-all"
                     >
 
                       <td className="p-5 text-white">
