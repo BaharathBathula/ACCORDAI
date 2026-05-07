@@ -15,6 +15,7 @@ from app.api.insurance_ai import router as insurance_ai_router
 from app.api.agencies import router as agencies_router
 from app.api.realtime import router as realtime_router
 from app.api.multi_agent import router as multi_agent_router
+from app.api.rag import router as rag_router
 
 app = FastAPI(
     title="ACCORDAI API",
@@ -37,6 +38,7 @@ app.include_router(insurance_ai_router)
 app.include_router(agencies_router)
 app.include_router(realtime_router)
 app.include_router(multi_agent_router)
+app.include_router(rag_router)
 
 
 @app.get("/")
