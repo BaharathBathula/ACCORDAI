@@ -174,6 +174,9 @@ ACCORDAI/
 - Claims management module
 - Claim details experience
 - AI fraud analysis UI foundation
+- AI Copilot conversational interface
+- AI analytics dashboard
+- Insurance intelligence workspace
 
 ---
 
