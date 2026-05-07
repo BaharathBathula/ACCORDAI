@@ -231,6 +231,9 @@ ACCORDAI/
 - Protected routes implemented
 - Logout functionality added
 - Authenticated API requests initialized
+- Live policy creation workflow added
+- Policy CRUD frontend integration improved
+- Dynamic policy refresh behavior added
 
 ---
 
