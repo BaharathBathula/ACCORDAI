@@ -6,6 +6,7 @@ import Sidebar from "@/components/sidebar";
 import Topbar from "@/components/topbar";
 
 import ActivityFeed from "@/components/activity-feed";
+import SystemMetrics from "@/components/system-metrics";
 
 export default function DashboardPage() {
 
@@ -86,9 +87,17 @@ export default function DashboardPage() {
 
             </div>
 
-            <div className="grid grid-cols-3 gap-6">
+            <div className="grid grid-cols-2 gap-6 mb-10">
 
-              <div className="col-span-2 bg-gray-900 border border-gray-800 rounded-2xl p-6">
+              <SystemMetrics />
+
+              <ActivityFeed />
+
+            </div>
+
+            <div className="grid grid-cols-1 gap-6">
+
+              <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6">
 
                 <h2 className="text-2xl font-semibold text-white mb-6">
                   Agency Operations Overview
@@ -101,8 +110,6 @@ export default function DashboardPage() {
                 </div>
 
               </div>
-
-              <ActivityFeed />
 
             </div>
 
