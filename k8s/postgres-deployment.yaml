@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: accordai-postgres
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: accordai-postgres
+  template:
+    metadata:
+      labels:
+        app: accordai-postgres
+    spec:
+      containers:
+        - name: postgres
+          image: postgres:15
+          ports:
+            - containerPort: 5432
+          env:
+            - name: POSTGRES_USER
+              value: postgres
+            - name: POSTGRES_PASSWORD
+              value: password
+            - name: POSTGRES_DB
+              value: accordai
