@@ -201,6 +201,9 @@ ACCORDAI/
 - AI Copilot backend service initialized
 - Conversational insurance assistant API added
 - Insurance reasoning response layer created
+- Workflow task management module added
+- Task CRUD APIs initialized
+- AI-generated task management UI added
 
 ---
 
