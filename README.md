@@ -185,6 +185,10 @@ ACCORDAI/
 - Policy database model added
 - Claims database model added
 - User authentication model added
+- JWT authentication system initialized
+- Login API added
+- Password hashing utilities implemented
+- Frontend authentication page added
 
 ---
 
