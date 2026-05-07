@@ -164,15 +164,13 @@ ACCORDAI/
 
 # Current Status
 
-ACCORDAI is currently under active development.
-
-Initial development focus areas:
-
-- Frontend dashboard
-- Backend API platform
-- AI insurance agents
-- Customer & policy management
-- Workflow orchestration
+- Landing page
+- Insurance operations dashboard
+- Customer management module
+- Customer details experience
+- Policy management module
+- Policy details experience
+- AI insights UI foundation
 
 ---
 
