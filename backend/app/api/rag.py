@@ -1,5 +1,10 @@
 from fastapi import APIRouter
 
+from app.schemas.rag import (
+    RAGIngestRequest,
+    RAGSearchRequest
+)
+
 from app.services.rag_service import (
     ingest_document,
     retrieve_context
@@ -13,22 +18,20 @@ router = APIRouter(
 
 @router.post("/ingest")
 def ingest(
-    payload: dict
+    request: RAGIngestRequest
 ):
     return ingest_document(
-        document_id=payload["document_id"],
-        text=payload["text"],
-        metadata=payload.get(
-            "metadata",
-            {}
-        )
+        document_id=request.document_id,
+        text=request.text,
+        metadata=request.metadata
     )
 
 
 @router.post("/search")
 def search(
-    payload: dict
+    request: RAGSearchRequest
 ):
     return retrieve_context(
-        query=payload["query"]
+        query=request.query,
+        top_k=request.top_k
     )
