@@ -2,14 +2,27 @@
   "name": "accordai-frontend",
   "version": "1.0.0",
   "private": true,
+
   "scripts": {
-    "dev": "next dev"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
-"dependencies": {
-  "@tanstack/react-query": "latest",
-  "next": "latest",
-  "react": "latest",
-  "react-dom": "latest",
-  "typescript": "latest",
-  "tailwindcss": "latest"
+
+  "dependencies": {
+    "@tanstack/react-query": "latest",
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+
+  "devDependencies": {
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "autoprefixer": "latest",
+    "postcss": "latest",
+    "tailwindcss": "latest",
+    "typescript": "latest"
+  }
 }
