@@ -5,6 +5,8 @@ import ProtectedRoute from "@/components/protected-route";
 import Sidebar from "@/components/sidebar";
 import Topbar from "@/components/topbar";
 
+import ActivityFeed from "@/components/activity-feed";
+
 export default function DashboardPage() {
 
   return (
@@ -100,41 +102,7 @@ export default function DashboardPage() {
 
               </div>
 
-              <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6">
-
-                <h2 className="text-2xl font-semibold text-white mb-6">
-                  AI Insights
-                </h2>
-
-                <div className="space-y-4">
-
-                  <div className="bg-gray-950 border border-gray-800 rounded-xl p-4">
-
-                    <p className="text-gray-300">
-                      14 high-premium renewals require producer review.
-                    </p>
-
-                  </div>
-
-                  <div className="bg-gray-950 border border-gray-800 rounded-xl p-4">
-
-                    <p className="text-gray-300">
-                      AI detected possible cross-sell opportunities for commercial accounts.
-                    </p>
-
-                  </div>
-
-                  <div className="bg-gray-950 border border-gray-800 rounded-xl p-4">
-
-                    <p className="text-gray-300">
-                      Claims cycle time improved by 11% this quarter.
-                    </p>
-
-                  </div>
-
-                </div>
-
-              </div>
+              <ActivityFeed />
 
             </div>
 
