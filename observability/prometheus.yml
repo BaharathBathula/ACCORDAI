@@ -1,0 +1,16 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: "accordai-backend"
+    metrics_path: "/metrics"
+    static_configs:
+      - targets: ["backend:8000"]
+
+  - job_name: "accordai-redis"
+    static_configs:
+      - targets: ["redis:6379"]
+
+  - job_name: "accordai-worker"
+    static_configs:
+      - targets: ["worker:8000"]
