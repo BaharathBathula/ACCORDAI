@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import Sidebar from "@/components/sidebar";
 import Topbar from "@/components/topbar";
 
+import SearchInput from "@/components/search-input";
+
 import CreateCustomerForm from "@/components/create-customer-form";
 
 import { getCustomers } from "@/services/customer-service";
@@ -14,6 +16,8 @@ export default function CustomersPage() {
   const [customers, setCustomers] = useState<any[]>([]);
 
   const [loading, setLoading] = useState(true);
+
+  const [search, setSearch] = useState("");
 
   async function loadCustomers() {
 
@@ -41,6 +45,21 @@ export default function CustomersPage() {
     loadCustomers();
 
   }, []);
+
+  const filteredCustomers = customers.filter(
+    (customer) =>
+      customer.name
+        .toLowerCase()
+        .includes(search.toLowerCase()) ||
+
+      customer.email
+        .toLowerCase()
+        .includes(search.toLowerCase()) ||
+
+      customer.customer_type
+        .toLowerCase()
+        .includes(search.toLowerCase())
+  );
 
   return (
     <main className="flex min-h-screen bg-black">
@@ -76,6 +95,12 @@ export default function CustomersPage() {
             />
 
           </div>
+
+          <SearchInput
+            value={search}
+            onChange={setSearch}
+            placeholder="Search customers by name, email, or type..."
+          />
 
           <div className="bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden">
 
@@ -119,7 +144,7 @@ export default function CustomersPage() {
 
                 <tbody>
 
-                  {customers.map((customer) => (
+                  {filteredCustomers.map((customer) => (
 
                     <tr
                       key={customer.id}
