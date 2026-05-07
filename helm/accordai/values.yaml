@@ -1,0 +1,21 @@
+frontend:
+  replicaCount: 2
+  image: accordai-frontend:latest
+  port: 3000
+
+backend:
+  replicaCount: 2
+  image: accordai-backend:latest
+  port: 8000
+
+worker:
+  replicaCount: 2
+  image: accordai-backend:latest
+
+redis:
+  image: redis:7
+  port: 6379
+
+postgres:
+  image: postgres:15
+  port: 5432
