@@ -8,3 +8,5 @@ alembic
 passlib[bcrypt]
 python-jose
 openai
+langgraph
+langchain
