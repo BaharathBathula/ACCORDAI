@@ -280,6 +280,11 @@ ACCORDAI/
 - Async AI job processing initialized
 - Background document, fraud, and policy analysis jobs added
 - Async processing documentation created
+- Kubernetes infrastructure manifests added
+- Backend, frontend, Redis, PostgreSQL, and Celery worker deployments added
+- Kubernetes service definitions added
+- Kubernetes deployment guide created
+- Enterprise container orchestration foundation established
 
 ---
 
