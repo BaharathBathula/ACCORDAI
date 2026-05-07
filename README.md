@@ -212,6 +212,11 @@ ACCORDAI/
 - Real AI Copilot service upgraded
 - Insurance AI reasoning APIs added
 - Policy, claim, and document AI endpoints initialized
+- Docker production foundation added
+- PostgreSQL container setup added
+- Backend and frontend Dockerfiles added
+- Deployment guide created
+- Environment template added
 
 ---
 
