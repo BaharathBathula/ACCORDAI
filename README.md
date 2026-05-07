@@ -225,6 +225,20 @@ ACCORDAI/
 
 ---
 
+# Enterprise Platform Focus
+
+ACCORDAI is being designed as a next-generation AI-native insurance operating system focused on:
+
+- Insurance workflow automation
+- Conversational AI operations
+- Intelligent policy analysis
+- Claims intelligence
+- AI-powered agency productivity
+- Enterprise SaaS architecture
+- Operational visibility and governance
+
+The platform combines modern cloud-native engineering with insurance-domain AI workflows to create a scalable intelligent agency management ecosystem.
+
 # Long-Term Vision
 
 ACCORDAI aims to become a fully AI-native insurance operating system capable of supporting:
