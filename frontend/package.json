@@ -5,11 +5,11 @@
   "scripts": {
     "dev": "next dev"
   },
-  "dependencies": {
-    "next": "latest",
-    "react": "latest",
-    "react-dom": "latest",
-    "typescript": "latest",
-    "tailwindcss": "latest"
-  }
+"dependencies": {
+  "@tanstack/react-query": "latest",
+  "next": "latest",
+  "react": "latest",
+  "react-dom": "latest",
+  "typescript": "latest",
+  "tailwindcss": "latest"
 }
