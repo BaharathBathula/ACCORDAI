@@ -263,6 +263,12 @@ ACCORDAI/
 - AI knowledge retrieval integrated
 - FAISS vector search foundation established
 - Multi-agent RAG context integration added
+- GitHub Actions CI pipeline added
+- Frontend production build scripts added
+- Vercel deployment configuration added
+- Render backend deployment configuration added
+- Production readiness checklist created
+- Deployment architecture documented
 
 ---
 
