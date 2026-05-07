@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: accordai-backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: accordai-backend
+  template:
+    metadata:
+      labels:
+        app: accordai-backend
+    spec:
+      containers:
+        - name: backend
+          image: accordai-backend:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8000
+          env:
+            - name: DATABASE_URL
+              value: postgresql://postgres:password@accordai-postgres:5432/accordai
+            - name: REDIS_URL
+              value: redis://accordai-redis:6379/0
+            - name: CELERY_BROKER_URL
+              value: redis://accordai-redis:6379/0
+            - name: CELERY_RESULT_BACKEND
+              value: redis://accordai-redis:6379/0
+            - name: OPENAI_MODEL
+              value: gpt-4o-mini
