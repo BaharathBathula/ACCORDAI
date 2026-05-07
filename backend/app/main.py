@@ -1,16 +1,16 @@
 from fastapi import FastAPI
-from app.clients.routes import router as clients_router
-from app.policies.routes import router as policies_router
 
 app = FastAPI(
-    title="ACCORDAI",
-    version="0.1.0",
-    description="Modern AI-powered Agency Management System (AMS)"
+    title="ACCORDAI API",
+    description="AI-native insurance agency management platform backend.",
+    version="1.0.0"
 )
 
-app.include_router(clients_router)
-app.include_router(policies_router)
 
-@app.get("/health")
-def health_check():
-    return {"status": "ok"}
+@app.get("/")
+def root():
+    return {
+        "platform": "ACCORDAI",
+        "status": "active",
+        "service": "insurance-ai-platform"
+    }
