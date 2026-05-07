@@ -2,13 +2,10 @@
 
 import { useState } from "react";
 
-import { createCustomer } from "@/services/customer-service";
+import { useCreateCustomer } from "@/hooks/use-customers";
 
-export default function CreateCustomerForm({
-  onCreated
-}: {
-  onCreated?: () => void;
-}) {
+export default function CreateCustomerForm() {
+  const createCustomerMutation = useCreateCustomer();
 
   const [formData, setFormData] = useState({
     name: "",
@@ -18,54 +15,20 @@ export default function CreateCustomerForm({
     status: "active"
   });
 
-  const [loading, setLoading] = useState(false);
-
-  const [success, setSuccess] = useState("");
-
-  const [error, setError] = useState("");
-
-  async function handleSubmit(
-    e: React.FormEvent
-  ) {
-
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
 
-    setLoading(true);
-
-    setSuccess("");
-
-    setError("");
-
-    try {
-
-      await createCustomer(formData);
-
-      setSuccess(
-        "Customer created successfully."
-      );
-
-      if (onCreated) {
-        onCreated();
+    createCustomerMutation.mutate(formData, {
+      onSuccess: () => {
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          customer_type: "Personal",
+          status: "active"
+        });
       }
-
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        customer_type: "Personal",
-        status: "active"
-      });
-
-    } catch (err) {
-
-      setError(
-        "Failed to create customer."
-      );
-
-    } finally {
-
-      setLoading(false);
-    }
+    });
   }
 
   return (
@@ -73,13 +36,11 @@ export default function CreateCustomerForm({
       onSubmit={handleSubmit}
       className="bg-gray-900 border border-gray-800 rounded-2xl p-6"
     >
-
       <h2 className="text-2xl font-semibold text-white mb-6">
         Create Customer
       </h2>
 
       <div className="grid grid-cols-2 gap-5">
-
         <input
           type="text"
           placeholder="Customer Name"
@@ -131,43 +92,32 @@ export default function CreateCustomerForm({
           }
           className="bg-gray-950 border border-gray-800 rounded-xl px-5 py-4 text-white outline-none"
         >
-
-          <option value="Personal">
-            Personal
-          </option>
-
-          <option value="Commercial">
-            Commercial
-          </option>
-
+          <option value="Personal">Personal</option>
+          <option value="Commercial">Commercial</option>
         </select>
-
       </div>
 
-      {success && (
+      {createCustomerMutation.isSuccess && (
         <div className="text-green-400 mt-5">
-          {success}
+          Customer created successfully.
         </div>
       )}
 
-      {error && (
+      {createCustomerMutation.isError && (
         <div className="text-red-400 mt-5">
-          {error}
+          Failed to create customer.
         </div>
       )}
 
       <button
         type="submit"
-        disabled={loading}
+        disabled={createCustomerMutation.isPending}
         className="mt-6 bg-blue-600 hover:bg-blue-500 transition-all px-6 py-4 rounded-xl text-white font-medium"
       >
-
-        {loading
+        {createCustomerMutation.isPending
           ? "Creating..."
           : "Create Customer"}
-
       </button>
-
     </form>
   );
 }
