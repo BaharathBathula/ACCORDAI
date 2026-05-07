@@ -192,6 +192,9 @@ ACCORDAI/
 - Database session dependency added
 - Customer schemas added
 - Customer CRUD API initialized
+- Policy CRUD APIs added
+- AI policy intelligence service initialized
+- Insurance AI analysis endpoints added
 
 ---
 
