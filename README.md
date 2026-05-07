@@ -242,6 +242,11 @@ ACCORDAI/
 - Policy search and filtering added
 - Claims search and filtering added
 - Production UX improvements initialized
+- React Query data layer added
+- Centralized query provider configured
+- Customer data hooks implemented
+- Customer creation mutation refactored
+- API caching and automatic refresh initialized
 
 ---
 
