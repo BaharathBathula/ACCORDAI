@@ -302,6 +302,12 @@ ACCORDAI/
 - Alerting rules documented
 - Observability guide created
 - Enterprise monitoring foundation established
+- RBAC authorization architecture added
+- Enterprise role and permission system added
+- Audit logging service added
+- Secure admin APIs added
+- Tenant security architecture documented
+- Enterprise security roadmap added
 
 ---
 
