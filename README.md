@@ -195,6 +195,9 @@ ACCORDAI/
 - Policy CRUD APIs added
 - AI policy intelligence service initialized
 - Insurance AI analysis endpoints added
+- Claims CRUD APIs added
+- AI fraud detection service initialized
+- Claim intelligence analysis endpoints added
 
 ---
 
