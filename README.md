@@ -181,6 +181,10 @@ ACCORDAI/
 - PostgreSQL database configuration added
 - SQLAlchemy architecture established
 - Backend API structure initialized
+- Customer database model added
+- Policy database model added
+- Claims database model added
+- User authentication model added
 
 ---
 
