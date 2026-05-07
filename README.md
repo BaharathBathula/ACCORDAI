@@ -171,6 +171,9 @@ ACCORDAI/
 - Policy management module
 - Policy details experience
 - AI insights UI foundation
+- Claims management module
+- Claim details experience
+- AI fraud analysis UI foundation
 
 ---
 
