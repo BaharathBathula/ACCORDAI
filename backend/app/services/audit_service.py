@@ -1,26 +1,30 @@
-from sqlalchemy.orm import Session
+from datetime import datetime
 
-from app.models.audit_log import AuditLog
+from app.core.logger import logger
 
 
-def create_audit_log(
-    db: Session,
-    actor_email: str,
+def log_audit_event(
+    user: str,
     action: str,
-    resource_type: str,
-    resource_id: str = "",
-    ip_address: str = ""
+    resource: str
 ):
-    audit_log = AuditLog(
-        actor_email=actor_email,
-        action=action,
-        resource_type=resource_type,
-        resource_id=resource_id,
-        ip_address=ip_address
+
+    audit_record = {
+        "timestamp":
+            str(datetime.utcnow()),
+
+        "user":
+            user,
+
+        "action":
+            action,
+
+        "resource":
+            resource
+    }
+
+    logger.info(
+        f"AUDIT EVENT: {audit_record}"
     )
 
-    db.add(audit_log)
-    db.commit()
-    db.refresh(audit_log)
-
-    return audit_log
+    return audit_record
