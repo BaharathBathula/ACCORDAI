@@ -10,3 +10,6 @@ python-jose
 openai
 langgraph
 langchain
+faiss-cpu
+sentence-transformers
+numpy
