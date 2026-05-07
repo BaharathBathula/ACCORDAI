@@ -1,13 +1,39 @@
+import Link from "next/link";
+
 export default function Sidebar() {
   const menuItems = [
-    "Dashboard",
-    "Customers",
-    "Policies",
-    "Claims",
-    "Tasks",
-    "Documents",
-    "Analytics",
-    "AI Copilot"
+    {
+      label: "Dashboard",
+      href: "/dashboard"
+    },
+    {
+      label: "Customers",
+      href: "/customers"
+    },
+    {
+      label: "Policies",
+      href: "/policies"
+    },
+    {
+      label: "Claims",
+      href: "/claims"
+    },
+    {
+      label: "Tasks",
+      href: "/tasks"
+    },
+    {
+      label: "Documents",
+      href: "/documents"
+    },
+    {
+      label: "Analytics",
+      href: "/analytics"
+    },
+    {
+      label: "AI Copilot",
+      href: "/copilot"
+    }
   ];
 
   return (
@@ -18,12 +44,13 @@ export default function Sidebar() {
 
       <nav className="space-y-4">
         {menuItems.map((item) => (
-          <div
-            key={item}
-            className="text-gray-300 hover:text-white hover:bg-gray-800 transition-all p-3 rounded-xl cursor-pointer"
+          <Link
+            key={item.label}
+            href={item.href}
+            className="block text-gray-300 hover:text-white hover:bg-gray-800 transition-all p-3 rounded-xl"
           >
-            {item}
-          </div>
+            {item.label}
+          </Link>
         ))}
       </nav>
     </aside>
