@@ -308,6 +308,12 @@ ACCORDAI/
 - Secure admin APIs added
 - Tenant security architecture documented
 - Enterprise security roadmap added
+- Advanced RAG schemas added
+- Hybrid semantic and keyword retrieval implemented
+- RAG source attribution added
+- Retrieval scoring architecture improved
+- Advanced RAG documentation created
+- RAG testing guide added
 
 ---
 
