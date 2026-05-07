@@ -237,6 +237,11 @@ ACCORDAI/
 - Live claim creation workflow added
 - Claims CRUD frontend integration improved
 - Dynamic claims refresh behavior added
+- Reusable search component added
+- Customer search and filtering added
+- Policy search and filtering added
+- Claims search and filtering added
+- Production UX improvements initialized
 
 ---
 
