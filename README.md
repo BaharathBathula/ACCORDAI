@@ -189,6 +189,9 @@ ACCORDAI/
 - Login API added
 - Password hashing utilities implemented
 - Frontend authentication page added
+- Database session dependency added
+- Customer schemas added
+- Customer CRUD API initialized
 
 ---
 
