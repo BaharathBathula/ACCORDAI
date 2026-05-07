@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: accordai-worker
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: accordai-worker
+  template:
+    metadata:
+      labels:
+        app: accordai-worker
+    spec:
+      containers:
+        - name: worker
+          image: accordai-backend:latest
+          imagePullPolicy: IfNotPresent
+          command:
+            - celery
+            - -A
+            - app.core.celery_app.celery_app
+            - worker
+            - --loglevel=info
+          env:
+            - name: DATABASE_URL
+              value: postgresql://postgres:password@accordai-postgres:5432/accordai
+            - name: REDIS_URL
+              value: redis://accordai-redis:6379/0
+            - name: CELERY_BROKER_URL
+              value: redis://accordai-redis:6379/0
+            - name: CELERY_RESULT_BACKEND
+              value: redis://accordai-redis:6379/0
+            - name: OPENAI_MODEL
+              value: gpt-4o-mini
