@@ -16,6 +16,9 @@ from app.api.agencies import router as agencies_router
 from app.api.realtime import router as realtime_router
 from app.api.multi_agent import router as multi_agent_router
 from app.api.rag import router as rag_router
+from app.middleware.request_monitor import (
+    RequestMonitoringMiddleware
+)
 
 app = FastAPI(
     title="ACCORDAI API",
@@ -39,6 +42,9 @@ app.include_router(agencies_router)
 app.include_router(realtime_router)
 app.include_router(multi_agent_router)
 app.include_router(rag_router)
+app.add_middleware(
+    RequestMonitoringMiddleware
+)
 
 
 @app.get("/")
