@@ -22,6 +22,7 @@ from app.middleware.request_monitor import (
 from app.api.metrics import (
     router as metrics_router
 )
+from app.api.jobs import router as jobs_router
 
 app = FastAPI(
     title="ACCORDAI API",
@@ -49,6 +50,7 @@ app.add_middleware(
     RequestMonitoringMiddleware
 )
 app.include_router(metrics_router)
+app.include_router(jobs_router)
 
 @app.get("/")
 def root():
