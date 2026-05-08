@@ -314,6 +314,12 @@ ACCORDAI/
 - Retrieval scoring architecture improved
 - Advanced RAG documentation created
 - RAG testing guide added
+- Autonomous AI workflow engine added
+- Policy renewal automation added
+- Claim triage automation added
+- Workflow APIs added
+- Workflow dashboard widget added
+- Autonomous AI workflow architecture documented
 
 ---
 
