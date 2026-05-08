@@ -326,6 +326,12 @@ ACCORDAI/
 - Multi-agent Copilot routing integrated
 - Frontend live chat UI added
 - Conversational Copilot architecture documented
+- AI recommendation engine added
+- Cross-sell recommendation logic added
+- Renewal and fraud recommendation logic added
+- Recommendation API added
+- Dashboard recommendation widget added
+- Recommendation engine architecture documented
 
 ---
 
