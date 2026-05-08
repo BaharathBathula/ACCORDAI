@@ -12,3 +12,8 @@ Open:
 
 ```text
 http://localhost:3000/login
+
+Demo credentials:
+
+admin@accordai.com
+admin123
