@@ -320,6 +320,12 @@ ACCORDAI/
 - Workflow APIs added
 - Workflow dashboard widget added
 - Autonomous AI workflow architecture documented
+- Conversational AI Copilot upgraded
+- Conversation memory service added
+- Chat API added
+- Multi-agent Copilot routing integrated
+- Frontend live chat UI added
+- Conversational Copilot architecture documented
 
 ---
 
