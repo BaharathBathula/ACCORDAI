@@ -8,6 +8,7 @@ import Topbar from "@/components/topbar";
 import ActivityFeed from "@/components/activity-feed";
 import SystemMetrics from "@/components/system-metrics";
 import WorkflowWidget from "@/components/workflow-widget";
+import RecommendationWidget from "@/components/recommendation-widget";
 
 export default function DashboardPage() {
 
@@ -99,6 +100,12 @@ export default function DashboardPage() {
             <div className="mb-10">
 
               <WorkflowWidget />
+
+            </div>
+
+            <div className="mb-10">
+
+              <RecommendationWidget />
 
             </div>
 
