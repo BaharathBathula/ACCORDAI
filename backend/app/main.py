@@ -29,6 +29,9 @@ from app.api.admin import (
 from app.api.workflows import (
     router as workflows_router
 )
+from app.api.chat import (
+    router as chat_router
+)
 
 app = FastAPI(
     title="ACCORDAI API",
@@ -59,6 +62,7 @@ app.include_router(metrics_router)
 app.include_router(jobs_router)
 app.include_router(admin_router)
 app.include_router(workflows_router)
+app.include_router(chat_router)
 
 @app.get("/")
 def root():
