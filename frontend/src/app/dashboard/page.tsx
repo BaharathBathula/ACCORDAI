@@ -7,6 +7,7 @@ import Topbar from "@/components/topbar";
 
 import ActivityFeed from "@/components/activity-feed";
 import SystemMetrics from "@/components/system-metrics";
+import WorkflowWidget from "@/components/workflow-widget";
 
 export default function DashboardPage() {
 
@@ -92,6 +93,12 @@ export default function DashboardPage() {
               <SystemMetrics />
 
               <ActivityFeed />
+
+            </div>
+
+            <div className="mb-10">
+
+              <WorkflowWidget />
 
             </div>
 
