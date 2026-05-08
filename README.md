@@ -1,4 +1,4 @@
-# ACCORDAI
+# ACORDAI
 
 ## AI-Native Insurance Agency Management Platform
 
