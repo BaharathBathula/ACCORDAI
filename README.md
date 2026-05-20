@@ -2,7 +2,7 @@
 
 ## AI-Native Insurance Agency Management Platform
 
-ACCORDAI is a modern AI-powered Agency Management System (AMS) designed for independent insurance agencies, brokers, and enterprise insurance operations.
+ACORDAI is a modern AI-powered Agency Management System (AMS) designed for independent insurance agencies, brokers, and enterprise insurance operations.
 
 Inspired by platforms such as AMS360, Applied Epic, and EZLynx, ACCORDAI combines modern cloud-native architecture with AI-driven automation to create the next generation of insurance operations platforms.
 
@@ -12,7 +12,7 @@ Inspired by platforms such as AMS360, Applied Epic, and EZLynx, ACCORDAI combine
 
 Traditional insurance agency management systems are workflow-heavy, manually operated, and built on legacy architectures.
 
-ACCORDAI is designed to modernize insurance operations through:
+ACORDAI is designed to modernize insurance operations through:
 
 - AI-powered policy intelligence
 - Claims automation
@@ -43,7 +43,7 @@ ACCORDAI is designed to modernize insurance operations through:
 
 # AI Capabilities
 
-ACCORDAI is built as an AI-native insurance platform.
+ACORDAI is built as an AI-native insurance platform.
 
 ## Planned AI Agents
 
@@ -131,7 +131,7 @@ PostgreSQL + Redis + Vector Database
 
 # Security & Compliance
 
-ACCORDAI is being designed with enterprise-grade security and operational governance in mind.
+ACORDAI is being designed with enterprise-grade security and operational governance in mind.
 
 Planned controls include:
 
@@ -147,7 +147,7 @@ Planned controls include:
 # Repository Structure
 
 ```text
-ACCORDAI/
+ACORDAI/
 
 ├── frontend/
 ├── backend/
@@ -337,7 +337,7 @@ ACCORDAI/
 
 # Enterprise Platform Focus
 
-ACCORDAI is being designed as a next-generation AI-native insurance operating system focused on:
+ACORDAI is being designed as a next-generation AI-native insurance operating system focused on:
 
 - Insurance workflow automation
 - Conversational AI operations
@@ -351,7 +351,7 @@ The platform combines modern cloud-native engineering with insurance-domain AI w
 
 # Long-Term Vision
 
-ACCORDAI aims to become a fully AI-native insurance operating system capable of supporting:
+ACORDAI aims to become a fully AI-native insurance operating system capable of supporting:
 
 - Independent insurance agencies
 - MGA operations
